@@ -1,0 +1,49 @@
+@import '../../../styles/main.scss';
+
+.subnav {
+  display: flex;
+  flex-flow: row wrap;
+  background-color: $greenish-blue;
+  align-items: center;
+  width: 100%;
+  min-height: 1rem;
+}
+
+.list {
+  font-family: $global-font-family;
+  height: 100%;
+  color: $white;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  padding: 0 1rem 1rem 220px;
+  margin: 0;
+}
+
+.item {
+  list-style-type: none;
+  margin-top: 1rem;
+  
+  &:not(:last-child) {
+    padding-right: 46px;
+    
+    @media screen and (max-width: 1036px) {
+      padding-right: 43px;
+    }
+  }
+}
+
+.link {
+  color: $white;
+  text-decoration: none;
+}
+
+.active {
+  color: $light-navy;
+}
+
+@include for-phablet {
+  .subnav {
+    display: none;
+  }
+}

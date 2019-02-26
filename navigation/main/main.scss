@@ -1,0 +1,158 @@
+@import '../../../styles/main.scss';
+
+.containerLeft {
+  display: flex;
+  height: 70px;
+  width: 100%;
+  align-items: center;
+
+  @include for-both() {
+    justify-content: flex-start;
+  }
+
+  @include for-phone() {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+.menuNav {
+  padding: 0;
+  display: flex;
+  min-width: 340px;
+  margin-left: 10px;
+  justify-content: space-between;
+
+  @include for-phablet() {
+    display: none;
+  }
+}
+
+.menuList {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.inlineIcon {
+  margin-left: 8px;
+  font-size: 1.2rem!important;
+}
+
+.menuItemActive > .inlineIcon {
+  color: $pastel-orange;
+}
+
+.menuItem {
+  white-space: nowrap;
+  color: $light-navy;
+  font-family: $global-font-family;
+  font-size: 16px;
+  font-weight: normal;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  &:hover, &:hover > .inlineIcon {
+    color: $pastel-orange;
+    cursor: pointer;
+  }
+}
+
+.menuItemActive {
+  color: $pastel-orange;
+}
+
+.containerRight {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 20px;
+
+  @include for-phablet() {
+    width: auto;
+    margin-right: 20px; // The same for now. Will change once profile icon is implemented
+  }
+}
+
+.icon {
+  font-size: 1.4rem;
+  color: $light-navy; 
+
+  &:hover {
+    color: $pastel-orange;
+  }
+
+  &:active {
+    color: $dark-orange;
+  }
+
+  &Invisible {
+    @include for-phone() {
+      display: none;
+    }
+  }
+}
+
+.line {
+  background: url(../../../static/assets/images/linegrey.svg);
+  background-size: 10px;
+  background-repeat: repeat-x;
+  height: 10px;
+  width: 40px;
+  transform: rotate(90deg);
+
+  @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+    width: 60px;
+  }
+
+  @include for-phone() {
+    margin-left: -6px;
+  }
+
+  &Invisible {
+    @include for-phone() {
+      display: none;
+    }
+  }
+}
+
+.wrapperContainer {
+  display: flex;
+  align-items: center;
+  height: 70px;
+  background-color: $white;
+}
+
+.popupImage {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: $white;
+  cursor: pointer;
+
+  @include for-phone() {
+    width: 30px;
+    height: 30px;
+  }
+
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+}
+
+.hamburger {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+
+  @include for-both() {
+    display: none;
+  }
+}
